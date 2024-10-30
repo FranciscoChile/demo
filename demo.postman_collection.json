@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "2facee60-bd7d-4e9c-80ac-75c2e5262d72",
+		"name": "demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37009588"
+	},
+	"item": [
+		{
+			"name": "registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"juan@user.com\",\n    \"password\": \"hola\",\n    \"fullName\": \"Juan Doe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"juan@user.com\",\n    \"password\": \"hola\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQHVzZXIuY29tIiwiaWF0IjoxNzMwMjYyNjM3LCJleHAiOjE3MzAyNjYyMzd9.P8R8ZAlrLLIpi7nz3CaCo81JcoB11KjovNG0oYSzbSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"name\",\n    \"email\": \"hola@hola.com\",\n    \"password\": \"Aasdada12\",\n    \"phones\": [\n        {\n            \"number\": \"3300412\",\n            \"cityCode\": \"412\",\n            \"countryCode\": \"1\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8005/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listado usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQHVzZXIuY29tIiwiaWF0IjoxNzMwMjYwMDEyLCJleHAiOjE3MzAyNjM2MTJ9.sdpLR46SL0zN6HsX1PyTKDi56CvptkuJM7BUNUWouRc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8005/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
